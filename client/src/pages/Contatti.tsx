@@ -133,7 +133,7 @@ export default function Contatti() {
                     onClick={() => setSubmitted(false)}
                     variant="outline"
                   >
-                    Invia un altro messaggio
+                    Invia un'altra email
                   </Button>
                 </div>
               ) : (
