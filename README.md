@@ -14,11 +14,23 @@ Il sito è ospitato su Vercel: [https://piccoli-passi.vercel.app](https://piccol
 ## 📂 Struttura del Progetto
 ```text
 Piccoli-Passi/
-├── index.html          # Pagina principale (Entry point)
-├── assets/             # Immagini, icone e loghi
-├── css/                # Fogli di stile (style.css)
-├── js/                 # Logica frontend e integrazione EmailJS
-└── vercel.json         # Configurazione per il deploy su Vercel
+├───.local
+│   └───state
+│       └───replit
+│           └───agent
+├───attached_assets
+├───client
+│   ├───public
+│   │   └───images
+│   └───src
+│       ├───components
+│       │   └───ui
+│       ├───hooks
+│       ├───lib
+│       └───pages
+├───script
+├───server
+└───shared
 ```
 📧 Funzionalità del Form di Contatto
 
