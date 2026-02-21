@@ -9,8 +9,8 @@ export function Footer() {
           {/* Brand Column */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2 group mb-6">
-              <div className="bg-white/10 p-2 rounded-xl">
-                <img src="/icona.jpg" alt="Logo" className="w-8 h-8 rounded-full object-cover" />
+              <div className="">
+                <img src="/icona.jpg" alt="Logo" className="w-12 h-12 rounded-full object-cover" />
               </div>
               <span className="text-xl font-bold tracking-tight">
                 Piccoli<span className="text-primary">Passi</span>

@@ -22,8 +22,8 @@ export function Navbar() {
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="bg-primary/10 p-2 rounded-xl group-hover:bg-primary/20 transition-colors">
-              <img src="/icona.jpg" alt="Logo" className="w-8 h-8 rounded-full object-cover" />
+            <div className="">
+              <img src="/icona.jpg" alt="Logo" className="w-12 h-12 rounded-full object-cover" />
             </div>
             <span className="text-xl font-bold text-gray-900 tracking-tight">
               Piccoli<span className="text-primary">Passi</span>
