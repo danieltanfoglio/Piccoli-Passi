@@ -67,7 +67,7 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
             </DialogDescription>
           </DialogHeader>
           <div className="mt-6 flex justify-end">
-            <Link href="/prenota-ora">
+            <Link href={`/prenota-ora?service=${encodeURIComponent(service.title)}`}>
               <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-6">
                 Prenota Ora
               </Button>

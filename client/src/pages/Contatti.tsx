@@ -85,8 +85,8 @@ export default function Contatti() {
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 text-lg">Vienici a trovare</h3>
-                    <p className="text-gray-600">Via Roma 123, 00100 Roma</p>
+                    <h3 className="font-bold text-gray-900 text-lg">Vienimi a trovare</h3>
+                    <p className="text-gray-600">Via Giovanni Paolo II, 25016 Brescia</p>
                   </div>
                 </div>
 
@@ -95,8 +95,8 @@ export default function Contatti() {
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 text-lg">Chiamaci</h3>
-                    <p className="text-gray-600">+39 06 1234 5678</p>
+                    <h3 className="font-bold text-gray-900 text-lg">Chiamami</h3>
+                    <p className="text-gray-600">+39 370 340 9814</p>
                     <p className="text-sm text-gray-400">Lun - Ven, 9:00 - 18:00</p>
                   </div>
                 </div>
@@ -106,8 +106,8 @@ export default function Contatti() {
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 text-lg">Scrivici</h3>
-                    <p className="text-gray-600">info@tutormaster.it</p>
+                    <h3 className="font-bold text-gray-900 text-lg">Scrivimi</h3>
+                    <p className="text-gray-600">ambratanfoglio@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -138,7 +138,7 @@ export default function Contatti() {
                 </div>
               ) : (
                 <>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-6">Inviaci un messaggio</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6">Inviami una email</h2>
                   <Form {...form}>
                     <form ref={formRef} id="form-contatti" onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                       <FormField

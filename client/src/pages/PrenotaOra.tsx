@@ -22,13 +22,16 @@ export default function PrenotaOra() {
     // Fetch available static services from hooks
     const { data: services = [] } = useServices();
 
+    const searchParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
+    const preselectedService = searchParams?.get("service");
+
     const form = useForm<InsertBookingRequest>({
         resolver: zodResolver(insertBookingRequestSchema),
         defaultValues: {
             name: "",
             contactInfo: "",
             country: "",
-            services: [],
+            services: preselectedService ? [preselectedService] : [],
             message: "",
         },
     });

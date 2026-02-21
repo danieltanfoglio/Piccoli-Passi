@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 overflow-hidden bg-white">
         <div className="absolute inset-0 hero-gradient opacity-30" />
@@ -39,7 +39,7 @@ export default function Home() {
                 </span> per i tuoi figli
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                Trova la babysitter o il tutor perfetto per le esigenze dei tuoi bambini. 
+                Trova la babysitter perfetta per le esigenze dei tuoi bambini.
                 Assistenza qualificata, aiuto compiti e attività creative.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -49,13 +49,13 @@ export default function Home() {
                   </Button>
                 </Link>
               </div>
-              
+
               <div className="mt-12 flex items-center gap-8">
                 <div className="flex -space-x-3">
                   {[1, 2, 3, 4].map((i) => (
                     <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center overflow-hidden">
-                       {/* Placeholder avatars */}
-                       <Users className="w-5 h-5 text-gray-400" />
+                      {/* Placeholder avatars */}
+                      <Users className="w-5 h-5 text-gray-400" />
                     </div>
                   ))}
                 </div>
@@ -66,12 +66,12 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-sm font-medium text-gray-600">
-                    <span className="font-bold text-gray-900">500+</span> famiglie soddisfatte
+                    <span className="font-bold text-gray-900">20+</span> famiglie soddisfatte
                   </p>
                 </div>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -79,14 +79,14 @@ export default function Home() {
               className="relative"
             >
               <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-[2rem] blur-xl" />
-              <img 
-                src={heroImage} 
-                alt="Bambini & Compiti Hero" 
+              <img
+                src={heroImage}
+                alt="Bambini & Compiti Hero"
                 className="relative rounded-[2rem] shadow-2xl w-full h-full object-cover"
               />
-              
+
               {/* Floating Card */}
-              <motion.div 
+              <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.8 }}
@@ -133,7 +133,7 @@ export default function Home() {
               ))}
             </div>
           )}
-          
+
           <div className="mt-12 text-center">
             <Link href="/servizi">
               <Button variant="outline" size="lg" className="rounded-full px-8">
