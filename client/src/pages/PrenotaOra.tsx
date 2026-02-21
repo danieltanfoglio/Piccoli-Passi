@@ -38,7 +38,7 @@ export default function PrenotaOra() {
 
         emailjs.send('service_ofsvhc6', 'template_nk3608b', {
             name: data.name,
-            contactInfo: data.contactInfo,
+            email: data.contactInfo, // mappato in 'email' per EmailJS
             country: data.country,
             services: data.services.join(", "),
             message: data.message || "Nessun messaggio aggiuntivo"
