@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
@@ -15,6 +15,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 export default function Contatti() {
   const [submitted, setSubmitted] = useState(false);
   const [isPending, setIsPending] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const form = useForm<InsertContactMessage>({
     resolver: zodResolver(insertContactMessageSchema),
@@ -28,7 +29,7 @@ export default function Contatti() {
   const onSubmit = (data: InsertContactMessage) => {
     setIsPending(true);
     // @ts-ignore
-    emailjs.sendForm('service_ofsvhc6', 'template_nk3608b', '#form-contatti')
+    emailjs.sendForm('service_ofsvhc6', 'template_nk3608b', formRef.current)
       .then(function () {
         setSubmitted(true);
         form.reset();
@@ -122,7 +123,7 @@ export default function Contatti() {
                 <>
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">Inviaci un messaggio</h2>
                   <Form {...form}>
-                    <form id="form-contatti" onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <form ref={formRef} id="form-contatti" onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                       <FormField
                         control={form.control}
                         name="name"

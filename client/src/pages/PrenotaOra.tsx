@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
@@ -17,6 +17,7 @@ import { CalendarCheck, Send } from "lucide-react";
 export default function PrenotaOra() {
     const [submitted, setSubmitted] = useState(false);
     const [isPending, setIsPending] = useState(false);
+    const formRef = useRef<HTMLFormElement>(null);
 
     // Fetch available static services from hooks
     const { data: services = [] } = useServices();
@@ -35,7 +36,7 @@ export default function PrenotaOra() {
     const onSubmit = (data: InsertBookingRequest) => {
         setIsPending(true);
         // @ts-ignore
-        emailjs.sendForm('service_ofsvhc6', 'template_nk3608b', '#form-prenota')
+        emailjs.sendForm('service_ofsvhc6', 'template_nk3608b', formRef.current)
             .then(function () {
                 setSubmitted(true);
                 form.reset();
@@ -92,7 +93,7 @@ export default function PrenotaOra() {
                             </div>
                         ) : (
                             <Form {...form}>
-                                <form id="form-prenota" onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                                <form ref={formRef} id="form-prenota" onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
 
                                     {/* Servizi - Multiple Checkbox */}
                                     <FormField
