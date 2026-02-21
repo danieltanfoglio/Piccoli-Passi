@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { type PricingPlan } from "@shared/schema";
+import { Link } from "wouter";
 
 export function PricingCard({ plan, index }: { plan: PricingPlan; index: number }) {
   return (
@@ -47,16 +48,18 @@ export function PricingCard({ plan, index }: { plan: PricingPlan; index: number 
         ))}
       </ul>
 
-      <Button 
-        className={`w-full py-6 rounded-xl font-bold text-base transition-all duration-300
-          ${plan.isPopular 
-            ? "bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25 hover:shadow-xl" 
-            : "bg-gray-100 hover:bg-gray-200 text-gray-900"
-          }
-        `}
-      >
-        Scegli {plan.name}
-      </Button>
+      <Link href="/contatti" className="w-full">
+        <Button 
+          className={`w-full py-6 rounded-xl font-bold text-base transition-all duration-300
+            ${plan.isPopular 
+              ? "bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25 hover:shadow-xl" 
+              : "bg-gray-100 hover:bg-gray-200 text-gray-900"
+            }
+          `}
+        >
+          Scegli {plan.name}
+        </Button>
+      </Link>
     </motion.div>
   );
 }

@@ -27,31 +27,30 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent-foreground font-medium text-sm mb-6">
-                <Star className="w-4 h-4 fill-current" />
-                Votato #1 per il supporto universitario
+                <Users className="w-4 h-4 fill-current" />
+                Il miglior supporto per i tuoi figli
               </div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-[1.1] mb-6">
-                Supera i tuoi esami con <span className="text-primary relative inline-block">
-                  sicurezza
+                La serenità per te, <span className="text-primary relative inline-block">
+                  il meglio
                   <svg className="absolute w-full h-3 -bottom-1 left-0 text-accent opacity-50" viewBox="0 0 100 10" preserveAspectRatio="none">
                     <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
                   </svg>
-                </span>
+                </span> per i tuoi figli
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                Trova il tutor perfetto per le tue esigenze. Lezioni personalizzate, 
-                supporto tesi e preparazione ai test d'ingresso.
+                Trova la babysitter o il tutor perfetto per le esigenze dei tuoi bambini. 
+                Assistenza qualificata, aiuto compiti e attività creative.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contatti">
+                <Link href="/servizi">
                   <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6 rounded-full shadow-lg shadow-primary/25 hover:shadow-xl transition-all">
-                    Inizia Ora
-                    <ArrowRight className="ml-2 w-5 h-5" />
+                    Cerca Babysitter
                   </Button>
                 </Link>
                 <Link href="/servizi">
                   <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-2 hover:bg-gray-50">
-                    Scopri i Servizi
+                    Aiuto Compiti
                   </Button>
                 </Link>
               </div>
@@ -72,7 +71,7 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-sm font-medium text-gray-600">
-                    <span className="font-bold text-gray-900">500+</span> studenti soddisfatti
+                    <span className="font-bold text-gray-900">500+</span> famiglie soddisfatte
                   </p>
                 </div>
               </div>
@@ -87,8 +86,8 @@ export default function Home() {
               <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-[2rem] blur-xl" />
               <img 
                 src={heroImage} 
-                alt="Student learning" 
-                className="relative rounded-[2rem] shadow-2xl w-full object-cover aspect-[4/3]"
+                alt="Bambini & Compiti Hero" 
+                className="relative rounded-[2rem] shadow-2xl w-full h-full object-cover"
               />
               
               {/* Floating Card */}
@@ -119,10 +118,10 @@ export default function Home() {
               Cosa Offriamo
             </h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              I Nostri Servizi Accademici
+              I Nostri Servizi
             </h3>
             <p className="text-gray-600 text-lg">
-              Percorsi personalizzati per ogni esigenza di studio, dalla preparazione esami al supporto tesi.
+              Supporto professionale per la crescita dei più piccoli, con servizi di babysitting e tutoraggio.
             </p>
           </div>
 
@@ -156,24 +155,24 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-                Come Funziona TutorMaster?
+                Come Funziona?
               </h2>
               <div className="space-y-8">
                 {[
                   {
                     step: "01",
-                    title: "Prenota una consulenza",
-                    desc: "Parla con un nostro esperto per definire i tuoi obiettivi."
+                    title: "Cerca",
+                    desc: "Trova il profilo ideale per le tue esigenze e quelle dei tuoi figli."
                   },
                   {
                     step: "02",
-                    title: "Incontra il tuo Tutor",
-                    desc: "Ti assegniamo il tutor più adatto alle tue esigenze specifiche."
+                    title: "Conosci",
+                    desc: "Incontra il tutor o la babysitter per un colloquio conoscitivo."
                   },
                   {
                     step: "03",
-                    title: "Raggiungi l'obiettivo",
-                    desc: "Segui il piano di studio personalizzato e supera i tuoi esami."
+                    title: "Prenota",
+                    desc: "Prenota il servizio in totale sicurezza attraverso la nostra piattaforma."
                   }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-6 group">
