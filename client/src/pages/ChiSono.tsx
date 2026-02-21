@@ -7,7 +7,7 @@ export default function ChiSono() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      
+
       <main className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
@@ -17,13 +17,13 @@ export default function ChiSono() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                <img 
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600" 
-                  alt="La mia foto" 
+                <img
+                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600"
+                  alt="La mia foto"
                   className="rounded-3xl shadow-lg w-full aspect-square object-cover"
                 />
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -31,24 +31,24 @@ export default function ChiSono() {
               >
                 <h1 className="text-4xl font-bold text-gray-900 mb-6">Chi Sono</h1>
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  Ciao! Sono una ragazza appassionata del mondo dell'infanzia, con anni di esperienza nel babysitting e nel supporto scolastico per i più piccoli.
+                  Ciao! Sono Ambra, studentessa universitaria frequentante la facoltà di scienze della formazione in Cattolica, babysitter in cerca di lavoro con 4 anni di esperienza nel lavoro aiuto-compiti e baby sitting.
                 </p>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Il mio obiettivo è offrire un ambiente sicuro, stimolante e sereno per i vostri bambini, aiutandoli a crescere e ad apprendere con il sorriso. Credo fermamente che ogni bambino abbia bisogno di attenzione personalizzata e di attività che stimolino la sua naturale curiosità.
+                  Sono stata due volte animatrice del grest per bambini di 4-5 anni. Mi sono diplomata a giugno 2024 con 90/100 al liceo scienze umane economico sociale al Don Milani Montichiari. Ho svolto il tirocinio presso la scuola materna di Ghedi. Sono automunita. Mi prendo cura dei piccoli con attenzione e amore, offrendo un ambiente sicuro e divertente. Organizzo attività creative ed educative, come giochi, letture e disegni, per stimolare la loro crescita e curiosità 🕒. Sono disponibile a lavorare con flessibilità, in orari serali o nel weekend, e durante la settimana su richiesta, anche in modo regolare e durante i mesi estivi. Con me, puoi stare tranquillo sapendo che i tuoi bambini sono in buone mani. Mi piacerebbe conoscere la tua famiglia e discutere di come posso essere d'aiuto!☺️
                 </p>
-                
+
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-gray-700">
                     <Mail className="w-5 h-5 text-primary" />
-                    <span>contatto@piccolipassi.it</span>
+                    <span>ambratanfoglio@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-3 text-gray-700">
                     <Phone className="w-5 h-5 text-primary" />
-                    <span>+39 345 123 4567</span>
+                    <span>+39 370 340 9814</span>
                   </div>
                   <div className="flex items-center gap-3 text-gray-700">
                     <MapPin className="w-5 h-5 text-primary" />
-                    <span>Roma, Italia</span>
+                    <span>Ghedi, Brescia</span>
                   </div>
                 </div>
               </motion.div>
