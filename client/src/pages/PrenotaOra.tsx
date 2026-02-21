@@ -11,24 +11,15 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { insertBookingRequestSchema, type InsertBookingRequest } from "@shared/schema";
 import { useBooking } from "@/hooks/use-booking";
-import { useQuery } from "@tanstack/react-query";
-import { api } from "@shared/routes";
+import { useServices } from "@/hooks/use-services";
 import { CalendarCheck, Send } from "lucide-react";
-import { getApiUrl } from "@/lib/queryClient";
 
 export default function PrenotaOra() {
     const { mutate, isPending } = useBooking();
     const [submitted, setSubmitted] = useState(false);
 
-    // Fetch available services from backend to populate the checkboxes
-    const { data: services = [] } = useQuery({
-        queryKey: [api.services.list.path],
-        queryFn: async () => {
-            const fullUrl = getApiUrl(api.services.list.path);
-            const res = await fetch(fullUrl);
-            return api.services.list.responses[200].parse(await res.json());
-        }
-    });
+    // Fetch available static services from hooks
+    const { data: services = [] } = useServices();
 
     const form = useForm<InsertBookingRequest>({
         resolver: zodResolver(insertBookingRequestSchema),
@@ -204,6 +195,7 @@ export default function PrenotaOra() {
                                                         placeholder="Raccontaci brevemente di cosa hai bisogno..."
                                                         className="min-h-[120px] rounded-xl bg-gray-50 border-gray-200 focus:bg-white resize-none transition-all p-4 text-base"
                                                         {...field}
+                                                        value={field.value || ""}
                                                     />
                                                 </FormControl>
                                                 <FormMessage />
