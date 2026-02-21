@@ -8,6 +8,7 @@ import Home from "@/pages/Home";
 import Servizi from "@/pages/Servizi";
 import Prezzi from "@/pages/Prezzi";
 import Contatti from "@/pages/Contatti";
+import ChiSono from "@/pages/ChiSono";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/servizi" component={Servizi} />
       <Route path="/prezzi" component={Prezzi} />
       <Route path="/contatti" component={Contatti} />
+      <Route path="/chi-sono" component={ChiSono} />
       <Route component={NotFound} />
     </Switch>
   );

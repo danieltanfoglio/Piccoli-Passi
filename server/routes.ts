@@ -54,18 +54,21 @@ async function seedDatabase() {
   if (existingServices.length === 0) {
     await storage.createService({
       title: "Babysitting",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      icon: "child_friendly"
+      description: "Assistenza qualificata per i più piccoli.",
+      longDescription: "Il nostro servizio di babysitting offre assistenza qualificata e amorevole per bambini di tutte le età. Ci occupiamo della loro sicurezza e del loro divertimento mentre tu sei impegnato.",
+      icon: "Baby"
     });
     await storage.createService({
       title: "Aiuto Compiti",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      icon: "menu_book"
+      description: "Supporto scolastico personalizzato.",
+      longDescription: "Aiutiamo i bambini a superare le difficoltà scolastiche con un metodo di studio efficace e personalizzato, rendendo i compiti un momento di crescita e non di stress.",
+      icon: "BookOpen"
     });
     await storage.createService({
       title: "Attività Creative",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      icon: "palette"
+      description: "Laboratori e giochi stimolanti.",
+      longDescription: "Organizziamo laboratori creativi, giochi educativi e attività artistiche per stimolare la fantasia e le abilità manuali dei bambini in un ambiente sicuro.",
+      icon: "Palette"
     });
   }
 

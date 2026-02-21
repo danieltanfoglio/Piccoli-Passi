@@ -7,7 +7,7 @@ import { ArrowRight, Star, Users, CheckCircle, GraduationCap } from "lucide-reac
 import { useServices } from "@/hooks/use-services";
 import { ServiceCard } from "@/components/ServiceCard";
 // @ts-ignore
-import heroImage from "@assets/screen_1771671184549.png";
+import heroImage from "/images/happy-kids.png";
 
 export default function Home() {
   const { data: services, isLoading } = useServices();
@@ -45,12 +45,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/servizi">
                   <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6 rounded-full shadow-lg shadow-primary/25 hover:shadow-xl transition-all">
-                    Cerca Babysitter
-                  </Button>
-                </Link>
-                <Link href="/servizi">
-                  <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-2 hover:bg-gray-50">
-                    Aiuto Compiti
+                    Richiedi Servizio
                   </Button>
                 </Link>
               </div>

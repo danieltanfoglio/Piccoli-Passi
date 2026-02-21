@@ -22,10 +22,10 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="bg-primary/10 p-2 rounded-xl group-hover:bg-primary/20 transition-colors">
-              <BookOpen className="h-6 w-6 text-primary" />
+              <span className="text-2xl">👶</span>
             </div>
             <span className="text-xl font-bold text-gray-900 tracking-tight">
-              Tutor<span className="text-primary">Master</span>
+              Piccoli<span className="text-primary">Passi</span>
             </span>
           </Link>
 

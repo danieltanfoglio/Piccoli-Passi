@@ -10,15 +10,15 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2 group mb-6">
               <div className="bg-white/10 p-2 rounded-xl">
-                <BookOpen className="h-6 w-6 text-primary" />
+                <span className="text-2xl">👶</span>
               </div>
               <span className="text-xl font-bold tracking-tight">
-                Tutor<span className="text-primary">Master</span>
+                Piccoli<span className="text-primary">Passi</span>
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
-              La piattaforma leader per il supporto allo studio e la preparazione universitaria.
-              Ti aiutiamo a raggiungere i tuoi obiettivi accademici con tutor esperti.
+              Servizi dedicati alla crescita e al benessere dei tuoi bambini.
+              Babysitting e aiuto compiti con amore e professionalità.
             </p>
           </div>
 
@@ -28,7 +28,7 @@ export function Footer() {
             <ul className="space-y-3">
               {[
                 { label: "Home", href: "/" },
-                { label: "Chi Siamo", href: "/#about" },
+                { label: "Chi Sono", href: "/chi-sono" },
                 { label: "I Nostri Servizi", href: "/servizi" },
                 { label: "Piani e Prezzi", href: "/prezzi" },
                 { label: "Contattaci", href: "/contatti" },
@@ -89,7 +89,7 @@ export function Footer() {
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm">
-            © 2024 TutorMaster. Tutti i diritti riservati.
+            © 2024 Piccoli Passi. Tutti i diritti riservati.
           </p>
           <div className="flex items-center gap-4">
             {[Facebook, Twitter, Instagram].map((Icon, i) => (
