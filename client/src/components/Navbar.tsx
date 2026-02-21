@@ -23,7 +23,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="bg-primary/10 p-2 rounded-xl group-hover:bg-primary/20 transition-colors">
-              <span className="text-2xl">👶</span>
+              <img src="/icona.jpg" alt="Logo" className="w-8 h-8 rounded-full object-cover" />
             </div>
             <span className="text-xl font-bold text-gray-900 tracking-tight">
               Piccoli<span className="text-primary">Passi</span>
@@ -86,8 +86,8 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${location === link.href
-                      ? "bg-primary/10 text-primary"
-                      : "text-gray-600 hover:bg-gray-50"
+                    ? "bg-primary/10 text-primary"
+                    : "text-gray-600 hover:bg-gray-50"
                     }`}
                   onClick={() => setIsOpen(false)}
                 >
