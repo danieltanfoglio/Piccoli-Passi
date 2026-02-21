@@ -39,10 +39,10 @@ export default function Contatti() {
     // 2. Invia email a TE STESSO (forzando l'email admin) usando il nuovo template (template_0wc7xnm)
     const sendToAdmin = emailjs.send('service_ofsvhc6', 'template_0wc7xnm', {
       name: data.name + " (Contatto)",
-      email: "danieldominiktanfoglio@gmail.com", // Manda la mail al gestore
+      email: data.email, // Manda la mail al gestore
       country: "N/A",
       services: "N/A (Form Contatti base)",
-      message: `Hai ricevuto un nuovo messaggio da: ${data.email}\n\nTesto:\n${data.message}`
+      message: `Hai ricevuto un nuovo messaggio da: ${data.name}\n\nTesto:\n${data.message}`
     }, 'UUjOBWmPLP47UpiUd');
 
     Promise.all([sendToClient, sendToAdmin])
@@ -125,9 +125,9 @@ export default function Contatti() {
                   <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Send className="w-10 h-10 text-green-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Messaggio Inviato!</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Email Inviata!</h3>
                   <p className="text-gray-600 mb-8">
-                    Grazie per averci contattato. Ti risponderemo il prima possibile.
+                    Grazie per averci contattato. Le risponderò il prima possibile.
                   </p>
                   <Button
                     onClick={() => setSubmitted(false)}
@@ -192,7 +192,7 @@ export default function Contatti() {
                         disabled={isPending}
                         className="w-full h-12 rounded-xl text-lg bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25"
                       >
-                        {isPending ? "Invio in corso..." : "Invia Messaggio"}
+                        {isPending ? "Invio in corso..." : "Invia Email"}
                       </Button>
                     </form>
                   </Form>
