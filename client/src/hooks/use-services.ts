@@ -31,6 +31,7 @@ export function useServices() {
     queryFn: async () => {
       return staticServices;
     },
+    initialData: staticServices,
     staleTime: Infinity,
     refetchOnWindowFocus: false,
     refetchOnMount: false,

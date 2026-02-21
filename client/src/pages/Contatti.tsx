@@ -36,11 +36,13 @@ export default function Contatti() {
       message: data.message
     }, 'UUjOBWmPLP47UpiUd');
 
-    // 2. Invia email a TE STESSO (forzando l'email admin)
-    const sendToAdmin = emailjs.send('service_ofsvhc6', 'template_nk3608b', {
-      name: data.name + " (Nuovo Contatto dal Sito)",
+    // 2. Invia email a TE STESSO (forzando l'email admin) usando il nuovo template (template_0wc7xnm)
+    const sendToAdmin = emailjs.send('service_ofsvhc6', 'template_0wc7xnm', {
+      name: data.name + " (Contatto)",
       email: "danieldominiktanfoglio@gmail.com", // Manda la mail al gestore
-      message: `Hai ricevuto un nuovo messaggio da: ${data.email}\n\nTesto: ${data.message}`
+      country: "N/A",
+      services: "N/A (Form Contatti base)",
+      message: `Hai ricevuto un nuovo messaggio da: ${data.email}\n\nTesto:\n${data.message}`
     }, 'UUjOBWmPLP47UpiUd');
 
     Promise.all([sendToClient, sendToAdmin])

@@ -26,6 +26,7 @@ export function usePricing() {
     queryFn: async () => {
       return staticPricing;
     },
+    initialData: staticPricing,
     staleTime: Infinity,
     refetchOnWindowFocus: false,
     refetchOnMount: false,
