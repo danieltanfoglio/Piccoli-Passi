@@ -1,0 +1,43 @@
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { usePricing } from "@/hooks/use-pricing";
+import { PricingCard } from "@/components/PricingCard";
+import { Loader2 } from "lucide-react";
+
+export default function Prezzi() {
+  const { data: plans, isLoading } = usePricing();
+
+  return (
+    <div className="min-h-screen bg-gray-50 flex flex-col">
+      <Navbar />
+      
+      <main className="flex-1 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Piani e Tariffe
+            </h1>
+            <p className="text-xl text-gray-600">
+              Scegli il piano più adatto alle tue esigenze. Nessun costo nascosto,
+              massima flessibilità.
+            </p>
+          </div>
+
+          {isLoading ? (
+            <div className="flex justify-center items-center py-20">
+              <Loader2 className="w-10 h-10 text-primary animate-spin" />
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto items-center">
+              {plans?.map((plan, index) => (
+                <PricingCard key={plan.id} plan={plan} index={index} />
+              ))}
+            </div>
+          )}
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}

@@ -1,38 +1,48 @@
-import { type User, type InsertUser } from "@shared/schema";
-import { randomUUID } from "crypto";
-
-// modify the interface with any CRUD methods
-// you might need
+import { db } from "./db";
+import {
+  services,
+  pricingPlans,
+  contactMessages,
+  type Service,
+  type InsertService,
+  type PricingPlan,
+  type InsertPricingPlan,
+  type ContactMessage,
+  type InsertContactMessage
+} from "@shared/schema";
 
 export interface IStorage {
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  getServices(): Promise<Service[]>;
+  getPricingPlans(): Promise<PricingPlan[]>;
+  createContactMessage(msg: InsertContactMessage): Promise<ContactMessage>;
+  // For seeding
+  createService(service: InsertService): Promise<Service>;
+  createPricingPlan(plan: InsertPricingPlan): Promise<PricingPlan>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
-
-  constructor() {
-    this.users = new Map();
+export class DatabaseStorage implements IStorage {
+  async getServices(): Promise<Service[]> {
+    return await db.select().from(services);
   }
 
-  async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+  async getPricingPlans(): Promise<PricingPlan[]> {
+    return await db.select().from(pricingPlans);
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+  async createContactMessage(msg: InsertContactMessage): Promise<ContactMessage> {
+    const [message] = await db.insert(contactMessages).values(msg).returning();
+    return message;
   }
 
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async createService(service: InsertService): Promise<Service> {
+    const [newService] = await db.insert(services).values(service).returning();
+    return newService;
+  }
+
+  async createPricingPlan(plan: InsertPricingPlan): Promise<PricingPlan> {
+    const [newPlan] = await db.insert(pricingPlans).values(plan).returning();
+    return newPlan;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
