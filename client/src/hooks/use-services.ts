@@ -31,5 +31,8 @@ export function useServices() {
     queryFn: async () => {
       return staticServices;
     },
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
   });
 }

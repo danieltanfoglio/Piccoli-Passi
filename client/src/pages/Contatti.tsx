@@ -29,11 +29,21 @@ export default function Contatti() {
   const onSubmit = (data: InsertContactMessage) => {
     setIsPending(true);
 
-    emailjs.send('service_ofsvhc6', 'template_nk3608b', {
+    // 1. Invia email al CLIENTE (usando il suo indirizzo nel campo email)
+    const sendToClient = emailjs.send('service_ofsvhc6', 'template_nk3608b', {
       name: data.name,
       email: data.email,
       message: data.message
-    }, 'UUjOBWmPLP47UpiUd')
+    }, 'UUjOBWmPLP47UpiUd');
+
+    // 2. Invia email a TE STESSO (forzando l'email admin)
+    const sendToAdmin = emailjs.send('service_ofsvhc6', 'template_nk3608b', {
+      name: data.name + " (Nuovo Contatto dal Sito)",
+      email: "danieldominiktanfoglio@gmail.com", // Manda la mail al gestore
+      message: `Hai ricevuto un nuovo messaggio da: ${data.email}\n\nTesto: ${data.message}`
+    }, 'UUjOBWmPLP47UpiUd');
+
+    Promise.all([sendToClient, sendToAdmin])
       .then(function () {
         setSubmitted(true);
         form.reset();
