@@ -32,21 +32,21 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
         className="bg-white rounded-2xl p-8 shadow-lg shadow-gray-200/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 group"
       >
         <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-          <IconRenderer 
-            iconName={service.icon} 
-            className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300" 
+          <IconRenderer
+            iconName={service.icon}
+            className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300"
           />
         </div>
-        
+
         <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
           {service.title}
         </h3>
-        
+
         <p className="text-gray-600 leading-relaxed mb-6">
           {service.description}
         </p>
-        
-        <div 
+
+        <div
           onClick={() => setShowDetail(true)}
           className="flex items-center text-primary font-semibold text-sm cursor-pointer group/link"
         >
@@ -67,7 +67,7 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
             </DialogDescription>
           </DialogHeader>
           <div className="mt-6 flex justify-end">
-            <Link href="/contatti">
+            <Link href="/prenota-ora">
               <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-6">
                 Prenota Ora
               </Button>
