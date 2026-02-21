@@ -15,8 +15,8 @@ import { useServices } from "@/hooks/use-services";
 import { CalendarCheck, Send } from "lucide-react";
 
 export default function PrenotaOra() {
-    const { mutate, isPending } = useBooking();
     const [submitted, setSubmitted] = useState(false);
+    const [isPending, setIsPending] = useState(false);
 
     // Fetch available static services from hooks
     const { data: services = [] } = useServices();
@@ -33,12 +33,17 @@ export default function PrenotaOra() {
     });
 
     const onSubmit = (data: InsertBookingRequest) => {
-        mutate(data, {
-            onSuccess: () => {
+        setIsPending(true);
+        // @ts-ignore
+        emailjs.sendForm('service_ofsvhc6', 'template_nk3608b', '#form-prenota')
+            .then(function () {
                 setSubmitted(true);
                 form.reset();
-            },
-        });
+                setIsPending(false);
+            }, function (error: any) {
+                alert("Errore nell'invio...");
+                setIsPending(false);
+            });
     };
 
     return (
@@ -87,7 +92,7 @@ export default function PrenotaOra() {
                             </div>
                         ) : (
                             <Form {...form}>
-                                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                                <form id="form-prenota" onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
 
                                     {/* Servizi - Multiple Checkbox */}
                                     <FormField

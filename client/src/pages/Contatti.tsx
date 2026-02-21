@@ -13,8 +13,8 @@ import { useContact } from "@/hooks/use-contact";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 export default function Contatti() {
-  const { mutate, isPending } = useContact();
   const [submitted, setSubmitted] = useState(false);
+  const [isPending, setIsPending] = useState(false);
 
   const form = useForm<InsertContactMessage>({
     resolver: zodResolver(insertContactMessageSchema),
@@ -26,22 +26,27 @@ export default function Contatti() {
   });
 
   const onSubmit = (data: InsertContactMessage) => {
-    mutate(data, {
-      onSuccess: () => {
+    setIsPending(true);
+    // @ts-ignore
+    emailjs.sendForm('service_ofsvhc6', 'template_nk3608b', '#form-contatti')
+      .then(function () {
         setSubmitted(true);
         form.reset();
-      },
-    });
+        setIsPending(false);
+      }, function (error: any) {
+        alert("Errore nell'invio...");
+        setIsPending(false);
+      });
   };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <Navbar />
-      
+
       <main className="flex-1 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            
+
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -106,7 +111,7 @@ export default function Contatti() {
                   <p className="text-gray-600 mb-8">
                     Grazie per averci contattato. Ti risponderemo il prima possibile.
                   </p>
-                  <Button 
+                  <Button
                     onClick={() => setSubmitted(false)}
                     variant="outline"
                   >
@@ -117,7 +122,7 @@ export default function Contatti() {
                 <>
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">Inviaci un messaggio</h2>
                   <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <form id="form-contatti" onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                       <FormField
                         control={form.control}
                         name="name"
@@ -131,7 +136,7 @@ export default function Contatti() {
                           </FormItem>
                         )}
                       />
-                      
+
                       <FormField
                         control={form.control}
                         name="email"
@@ -153,10 +158,10 @@ export default function Contatti() {
                           <FormItem>
                             <FormLabel className="text-gray-700">Messaggio</FormLabel>
                             <FormControl>
-                              <Textarea 
-                                placeholder="Scrivi qui il tuo messaggio..." 
-                                className="min-h-[150px] rounded-xl bg-gray-50 border-gray-200 focus:bg-white resize-none transition-all p-4" 
-                                {...field} 
+                              <Textarea
+                                placeholder="Scrivi qui il tuo messaggio..."
+                                className="min-h-[150px] rounded-xl bg-gray-50 border-gray-200 focus:bg-white resize-none transition-all p-4"
+                                {...field}
                               />
                             </FormControl>
                             <FormMessage />
@@ -164,8 +169,8 @@ export default function Contatti() {
                         )}
                       />
 
-                      <Button 
-                        type="submit" 
+                      <Button
+                        type="submit"
                         disabled={isPending}
                         className="w-full h-12 rounded-xl text-lg bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25"
                       >
