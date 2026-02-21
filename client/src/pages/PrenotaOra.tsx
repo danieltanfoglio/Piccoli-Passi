@@ -38,7 +38,12 @@ export default function PrenotaOra() {
 
     const onSubmit = (data: InsertBookingRequest) => {
         setIsPending(true);
-
+        // 1. Invia email al CLIENTE (usando il suo indirizzo nel campo email)
+        const sendToClient = emailjs.send('service_ofsvhc6', 'template_nk3608b', {
+            name: data.name,
+            email: data.contactInfo,
+            message: data.message
+        }, 'UUjOBWmPLP47UpiUd');
         emailjs.send('service_ofsvhc6', 'template_0wc7xnm', {
             name: data.name,
             email: data.contactInfo, // mappato in 'email' per EmailJS
