@@ -1,13 +1,15 @@
 import { useMutation } from "@tanstack/react-query";
 import { api, type InsertBookingRequest } from "@shared/routes";
 import { useToast } from "@/hooks/use-toast";
+import { getApiUrl } from "@/lib/queryClient";
 
 export function useBooking() {
     const { toast } = useToast();
 
     return useMutation({
         mutationFn: async (data: InsertBookingRequest) => {
-            const res = await fetch(api.booking.create.path, {
+            const fullUrl = getApiUrl(api.booking.create.path);
+            const res = await fetch(fullUrl, {
                 method: api.booking.create.method,
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),

@@ -14,6 +14,7 @@ import { useBooking } from "@/hooks/use-booking";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@shared/routes";
 import { CalendarCheck, Send } from "lucide-react";
+import { getApiUrl } from "@/lib/queryClient";
 
 export default function PrenotaOra() {
     const { mutate, isPending } = useBooking();
@@ -23,7 +24,8 @@ export default function PrenotaOra() {
     const { data: services = [] } = useQuery({
         queryKey: [api.services.list.path],
         queryFn: async () => {
-            const res = await fetch(api.services.list.path);
+            const fullUrl = getApiUrl(api.services.list.path);
+            const res = await fetch(fullUrl);
             return api.services.list.responses[200].parse(await res.json());
         }
     });

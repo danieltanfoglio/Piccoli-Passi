@@ -2,6 +2,7 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
+import cors from "cors";
 
 const app = express();
 const httpServer = createServer(app);
@@ -19,6 +20,12 @@ app.use(
     },
   }),
 );
+
+// Enable CORS for frontend requests
+app.use(cors({
+  origin: process.env.CORS_ORIGIN || true, // Allow all or restrict via env
+  credentials: true
+}));
 
 app.use(express.urlencoded({ extended: false }));
 
