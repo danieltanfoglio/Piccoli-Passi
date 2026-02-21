@@ -27,9 +27,20 @@ export const contactMessages = pgTable("contact_messages", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+export const bookingRequests = pgTable("booking_requests", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  contactInfo: text("contact_info").notNull(), // email or phone
+  country: text("country").notNull(),
+  services: text("services").array().notNull(), // selected services
+  message: text("message"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
 export const insertServiceSchema = createInsertSchema(services).omit({ id: true });
 export const insertPricingPlanSchema = createInsertSchema(pricingPlans).omit({ id: true });
 export const insertContactMessageSchema = createInsertSchema(contactMessages).omit({ id: true, createdAt: true });
+export const insertBookingRequestSchema = createInsertSchema(bookingRequests).omit({ id: true, createdAt: true });
 
 export type Service = typeof services.$inferSelect;
 export type InsertService = z.infer<typeof insertServiceSchema>;
@@ -39,3 +50,6 @@ export type InsertPricingPlan = z.infer<typeof insertPricingPlanSchema>;
 
 export type ContactMessage = typeof contactMessages.$inferSelect;
 export type InsertContactMessage = z.infer<typeof insertContactMessageSchema>;
+
+export type BookingRequest = typeof bookingRequests.$inferSelect;
+export type InsertBookingRequest = z.infer<typeof insertBookingRequestSchema>;

@@ -43,6 +43,22 @@ export async function registerRoutes(
     }
   });
 
+  app.post(api.booking.create.path, async (req, res) => {
+    try {
+      const input = api.booking.create.input.parse(req.body);
+      const request = await storage.createBookingRequest(input);
+      res.status(201).json(request);
+    } catch (err) {
+      if (err instanceof z.ZodError) {
+        return res.status(400).json({
+          message: err.errors[0].message,
+          field: err.errors[0].path.join('.'),
+        });
+      }
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  });
+
   // Seed data logic
   await seedDatabase();
 

@@ -12,6 +12,7 @@ export function Navbar() {
     { href: "/", label: "Home" },
     { href: "/servizi", label: "Servizi" },
     { href: "/prezzi", label: "Prezzi" },
+    { href: "/chi-sono", label: "Chi sono" },
     { href: "/contatti", label: "Contatti" },
   ];
 
@@ -35,9 +36,8 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary relative py-1 ${
-                  location === link.href ? "text-primary" : "text-gray-600"
-                }`}
+                className={`text-sm font-medium transition-colors hover:text-primary relative py-1 ${location === link.href ? "text-primary" : "text-gray-600"
+                  }`}
               >
                 {link.label}
                 {location === link.href && (
@@ -50,7 +50,7 @@ export function Navbar() {
                 )}
               </Link>
             ))}
-            <Link href="/contatti">
+            <Link href="/prenota-ora">
               <Button className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25 rounded-full px-6">
                 Prenota Ora
               </Button>
@@ -85,18 +85,17 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                    location === link.href
+                  className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${location === link.href
                       ? "bg-primary/10 text-primary"
                       : "text-gray-600 hover:bg-gray-50"
-                  }`}
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
               <div className="pt-4 px-4">
-                <Link href="/contatti" onClick={() => setIsOpen(false)}>
+                <Link href="/prenota-ora" onClick={() => setIsOpen(false)}>
                   <Button className="w-full bg-primary hover:bg-primary/90 text-white rounded-full">
                     Prenota Ora
                   </Button>

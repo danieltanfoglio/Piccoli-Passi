@@ -8,13 +8,17 @@ import {
   type PricingPlan,
   type InsertPricingPlan,
   type ContactMessage,
-  type InsertContactMessage
+  type InsertContactMessage,
+  bookingRequests,
+  type BookingRequest,
+  type InsertBookingRequest
 } from "@shared/schema";
 
 export interface IStorage {
   getServices(): Promise<Service[]>;
   getPricingPlans(): Promise<PricingPlan[]>;
   createContactMessage(msg: InsertContactMessage): Promise<ContactMessage>;
+  createBookingRequest(req: InsertBookingRequest): Promise<BookingRequest>;
   // For seeding
   createService(service: InsertService): Promise<Service>;
   createPricingPlan(plan: InsertPricingPlan): Promise<PricingPlan>;
@@ -32,6 +36,11 @@ export class DatabaseStorage implements IStorage {
   async createContactMessage(msg: InsertContactMessage): Promise<ContactMessage> {
     const [message] = await db.insert(contactMessages).values(msg).returning();
     return message;
+  }
+
+  async createBookingRequest(req: InsertBookingRequest): Promise<BookingRequest> {
+    const [request] = await db.insert(bookingRequests).values(req).returning();
+    return request;
   }
 
   async createService(service: InsertService): Promise<Service> {
