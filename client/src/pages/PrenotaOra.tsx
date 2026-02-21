@@ -29,7 +29,8 @@ export default function PrenotaOra() {
         resolver: zodResolver(insertBookingRequestSchema),
         defaultValues: {
             name: "",
-            contactInfo: "",
+            email: "",
+            phone: "",
             country: "",
             services: preselectedService ? [preselectedService] : [],
             message: "",
@@ -38,15 +39,18 @@ export default function PrenotaOra() {
 
     const onSubmit = (data: InsertBookingRequest) => {
         setIsPending(true);
-        // 1. Invia email al CLIENTE (usando il suo indirizzo nel campo email)
+        // 1. Invia email al CLIENTE
         const sendToClient = emailjs.send('service_ofsvhc6', 'template_nk3608b', {
             name: data.name,
-            email: data.contactInfo,
+            email: data.email,
             message: data.message
         }, 'UUjOBWmPLP47UpiUd');
+
+        // 2. Invia email a TE (titolare)
         emailjs.send('service_ofsvhc6', 'template_0wc7xnm', {
             name: data.name,
-            email: data.contactInfo, // mappato in 'email' per EmailJS
+            email: data.email,
+            phone: data.phone,
             country: data.country,
             services: data.services.join(", "),
             message: data.message || "Nessun messaggio aggiuntivo"
@@ -191,19 +195,35 @@ export default function PrenotaOra() {
                                         />
                                     </div>
 
-                                    <FormField
-                                        control={form.control}
-                                        name="contactInfo"
-                                        render={({ field }) => (
-                                            <FormItem>
-                                                <FormLabel className="text-gray-700 font-medium">Telefono o Email</FormLabel>
-                                                <FormControl>
-                                                    <Input placeholder="Inserisci un recapito per essere ricontattato" {...field} className="h-12 rounded-xl bg-gray-50 border-gray-200 focus:bg-white transition-all text-base" />
-                                                </FormControl>
-                                                <FormMessage />
-                                            </FormItem>
-                                        )}
-                                    />
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <FormField
+                                            control={form.control}
+                                            name="email"
+                                            render={({ field }) => (
+                                                <FormItem>
+                                                    <FormLabel className="text-gray-700 font-medium">Email</FormLabel>
+                                                    <FormControl>
+                                                        <Input placeholder="Es: mario.rossi@email.com" {...field} className="h-12 rounded-xl bg-gray-50 border-gray-200 focus:bg-white transition-all text-base" />
+                                                    </FormControl>
+                                                    <FormMessage />
+                                                </FormItem>
+                                            )}
+                                        />
+
+                                        <FormField
+                                            control={form.control}
+                                            name="phone"
+                                            render={({ field }) => (
+                                                <FormItem>
+                                                    <FormLabel className="text-gray-700 font-medium">Telefono</FormLabel>
+                                                    <FormControl>
+                                                        <Input placeholder="+39 333 1234567" {...field} className="h-12 rounded-xl bg-gray-50 border-gray-200 focus:bg-white transition-all text-base" />
+                                                    </FormControl>
+                                                    <FormMessage />
+                                                </FormItem>
+                                            )}
+                                        />
+                                    </div>
 
                                     <FormField
                                         control={form.control}

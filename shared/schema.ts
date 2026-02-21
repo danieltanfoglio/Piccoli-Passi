@@ -30,7 +30,8 @@ export const contactMessages = pgTable("contact_messages", {
 export const bookingRequests = pgTable("booking_requests", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
-  contactInfo: text("contact_info").notNull(), // email or phone
+  email: text("email").notNull(),
+  phone: text("phone").notNull(),
   country: text("country").notNull(),
   services: text("services").array().notNull(), // selected services
   message: text("message"),
