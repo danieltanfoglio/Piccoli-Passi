@@ -9,8 +9,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { insertContactMessageSchema, type InsertContactMessage } from "@shared/schema";
-import { useContact } from "@/hooks/use-contact";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 export default function Contatti() {
   const [submitted, setSubmitted] = useState(false);
@@ -28,14 +28,19 @@ export default function Contatti() {
 
   const onSubmit = (data: InsertContactMessage) => {
     setIsPending(true);
-    // @ts-ignore
-    emailjs.sendForm('service_ofsvhc6', 'template_nk3608b', formRef.current)
+
+    emailjs.send('service_ofsvhc6', 'template_nk3608b', {
+      name: data.name,
+      email: data.email,
+      message: data.message
+    }, 'UUjOBWmPLP47UpiUd')
       .then(function () {
         setSubmitted(true);
         form.reset();
         setIsPending(false);
       }, function (error: any) {
-        alert("Errore nell'invio...");
+        console.error("EmailJS Error:", error);
+        alert("Errore nell'invio... Dettagli: " + (error.text || error.message || JSON.stringify(error)));
         setIsPending(false);
       });
   };

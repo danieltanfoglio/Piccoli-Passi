@@ -10,9 +10,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { insertBookingRequestSchema, type InsertBookingRequest } from "@shared/schema";
-import { useBooking } from "@/hooks/use-booking";
 import { useServices } from "@/hooks/use-services";
 import { CalendarCheck, Send } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 export default function PrenotaOra() {
     const [submitted, setSubmitted] = useState(false);
@@ -35,14 +35,21 @@ export default function PrenotaOra() {
 
     const onSubmit = (data: InsertBookingRequest) => {
         setIsPending(true);
-        // @ts-ignore
-        emailjs.sendForm('service_ofsvhc6', 'template_nk3608b', formRef.current)
+
+        emailjs.send('service_ofsvhc6', 'template_nk3608b', {
+            name: data.name,
+            contactInfo: data.contactInfo,
+            country: data.country,
+            services: data.services.join(", "),
+            message: data.message || "Nessun messaggio aggiuntivo"
+        }, 'UUjOBWmPLP47UpiUd')
             .then(function () {
                 setSubmitted(true);
                 form.reset();
                 setIsPending(false);
             }, function (error: any) {
-                alert("Errore nell'invio...");
+                console.error("EmailJS Error:", error);
+                alert("Errore nell'invio... Dettagli: " + (error.text || error.message || JSON.stringify(error)));
                 setIsPending(false);
             });
     };
