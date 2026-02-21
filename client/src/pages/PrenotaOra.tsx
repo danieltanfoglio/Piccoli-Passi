@@ -36,7 +36,7 @@ export default function PrenotaOra() {
     const onSubmit = (data: InsertBookingRequest) => {
         setIsPending(true);
 
-        emailjs.send('service_ofsvhc6', 'template_nk3608b', {
+        emailjs.send('service_ofsvhc6', 'template_0wc7xnm', {
             name: data.name,
             email: data.contactInfo, // mappato in 'email' per EmailJS
             country: data.country,

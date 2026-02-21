@@ -10,18 +10,22 @@ import Prezzi from "@/pages/Prezzi";
 import Contatti from "@/pages/Contatti";
 import ChiSono from "@/pages/ChiSono";
 import PrenotaOra from "@/pages/PrenotaOra";
+import ScrollToTop from "@/components/ScrollToTop";
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/servizi" component={Servizi} />
-      <Route path="/prezzi" component={Prezzi} />
-      <Route path="/contatti" component={Contatti} />
-      <Route path="/chi-sono" component={ChiSono} />
-      <Route path="/prenota-ora" component={PrenotaOra} />
-      <Route component={NotFound} />
-    </Switch>
+    <>
+      <ScrollToTop />
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/servizi" component={Servizi} />
+        <Route path="/prezzi" component={Prezzi} />
+        <Route path="/contatti" component={Contatti} />
+        <Route path="/chi-sono" component={ChiSono} />
+        <Route path="/prenota-ora" component={PrenotaOra} />
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
 
