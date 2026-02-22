@@ -7,7 +7,7 @@ export const staticPricing: PricingPlan[] = [
     name: "Premium",
     price: "10€",
     description: "Il nostro piano più richiesto per supporto continuativo.",
-    features: ["Tutor dedicati", "Piano di studio personalizzato", "Attività creative incluse", "Supporto prioritario"],
+    features: ["Assistenza completa", "Aiuto compiti", "Attività creative", "Supporto prioritario"],
     isPopular: true
   }
 ];

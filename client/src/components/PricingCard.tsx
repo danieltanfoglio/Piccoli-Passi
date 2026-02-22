@@ -12,15 +12,15 @@ export function PricingCard({ plan, index }: { plan: PricingPlan; index: number 
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
       className={`relative rounded-3xl p-8 border-2 transition-all duration-300 flex flex-col
-        ${plan.isPopular 
-          ? "bg-white border-primary shadow-2xl shadow-primary/10 scale-105 z-10" 
+        ${plan.isPopular
+          ? "bg-white border-primary shadow-2xl shadow-primary/10 scale-105 z-10"
           : "bg-white border-gray-100 shadow-xl hover:border-primary/30"
         }
       `}
     >
       {plan.isPopular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-4 py-1.5 rounded-full text-sm font-bold shadow-md">
-          Più Popolare
+          Più Richiesto
         </div>
       )}
 
@@ -49,10 +49,10 @@ export function PricingCard({ plan, index }: { plan: PricingPlan; index: number 
       </ul>
 
       <Link href="/contatti" className="w-full">
-        <Button 
+        <Button
           className={`w-full py-6 rounded-xl font-bold text-base transition-all duration-300
-            ${plan.isPopular 
-              ? "bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25 hover:shadow-xl" 
+            ${plan.isPopular
+              ? "bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25 hover:shadow-xl"
               : "bg-gray-100 hover:bg-gray-200 text-gray-900"
             }
           `}

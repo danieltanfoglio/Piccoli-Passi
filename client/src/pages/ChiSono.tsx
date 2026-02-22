@@ -18,7 +18,7 @@ export default function ChiSono() {
                 transition={{ duration: 0.5 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600"
+                  src="/avatar.jpg"
                   alt="La mia foto"
                   className="rounded-3xl shadow-lg w-full aspect-square object-cover"
                 />

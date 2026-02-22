@@ -19,7 +19,7 @@ export default function Prezzi() {
             </h1>
             <p className="text-xl text-gray-600">
               Scegli il piano più adatto alle tue esigenze. Nessun costo nascosto,
-              massima flessibilità.
+              prezzo poco trattabile.
             </p>
           </div>
 
