@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+
+
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ChiSono() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
+    <div className="bg-gray-50">
+
 
       <main className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,7 +57,7 @@ export default function ChiSono() {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }
+

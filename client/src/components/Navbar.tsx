@@ -36,9 +36,10 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary relative py-1 ${location === link.href ? "text-primary" : "text-gray-600"
+                className={`text-sm font-medium hover:text-primary relative py-1 ${location === link.href ? "text-primary" : "text-gray-600"
                   }`}
               >
+
                 {link.label}
                 {location === link.href && (
                   <motion.div

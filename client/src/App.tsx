@@ -11,21 +11,27 @@ import Contatti from "@/pages/Contatti";
 import ChiSono from "@/pages/ChiSono";
 import PrenotaOra from "@/pages/PrenotaOra";
 import ScrollToTop from "@/components/ScrollToTop";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
 function Router() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <ScrollToTop />
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/servizi" component={Servizi} />
-        <Route path="/prezzi" component={Prezzi} />
-        <Route path="/contatti" component={Contatti} />
-        <Route path="/chi-sono" component={ChiSono} />
-        <Route path="/prenota-ora" component={PrenotaOra} />
-        <Route component={NotFound} />
-      </Switch>
-    </>
+      <Navbar />
+      <main className="flex-1">
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/servizi" component={Servizi} />
+          <Route path="/prezzi" component={Prezzi} />
+          <Route path="/contatti" component={Contatti} />
+          <Route path="/chi-sono" component={ChiSono} />
+          <Route path="/prenota-ora" component={PrenotaOra} />
+          <Route component={NotFound} />
+        </Switch>
+      </main>
+      <Footer />
+    </div>
   );
 }
 
@@ -39,5 +45,6 @@ function App() {
     </QueryClientProvider>
   );
 }
+
 
 export default App;

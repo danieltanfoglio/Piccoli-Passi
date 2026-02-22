@@ -2,8 +2,8 @@ import React, { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -67,8 +67,8 @@ export default function PrenotaOra() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50 flex flex-col">
-            <Navbar />
+        <div className="bg-gray-50 flex flex-col">
+
 
             <main className="flex-1 py-16 md:py-24">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -259,7 +259,7 @@ export default function PrenotaOra() {
                 </div>
             </main>
 
-            <Footer />
         </div>
     );
 }
+

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+
 import { Link } from "wouter";
 import { ArrowRight, Star, Users, CheckCircle, GraduationCap } from "lucide-react";
 import { useServices } from "@/hooks/use-services";
@@ -13,8 +12,8 @@ export default function Home() {
   const { data: services, isLoading } = useServices();
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
+    <div className="bg-gray-50">
+
 
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 overflow-hidden bg-white">
@@ -210,7 +209,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }
+

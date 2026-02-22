@@ -1,5 +1,5 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+
+
 import { usePricing } from "@/hooks/use-pricing";
 import { PricingCard } from "@/components/PricingCard";
 import { Loader2 } from "lucide-react";
@@ -8,8 +8,8 @@ export default function Prezzi() {
   const { data: plans, isLoading } = usePricing();
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Navbar />
+    <div className="bg-gray-50 flex flex-col">
+
 
       <main className="flex-1 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,7 +39,7 @@ export default function Prezzi() {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }
+
