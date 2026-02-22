@@ -83,7 +83,7 @@ export default function PrenotaOra() {
                             Prenota un Servizio
                         </h1>
                         <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                            Compila il modulo sottostante selezionando i servizi a cui sei interessato. Ti ricontatteremo a breve!
+                            Compila il modulo sottostante selezionando i servizi a cui sei interessato. Ti ricontatterò a breve!
                         </p>
                     </motion.div>
 
@@ -233,7 +233,7 @@ export default function PrenotaOra() {
                                                 <FormLabel className="text-gray-700 font-medium">Note o richieste particolari (opzionale)</FormLabel>
                                                 <FormControl>
                                                     <Textarea
-                                                        placeholder="Raccontaci brevemente di cosa hai bisogno..."
+                                                        placeholder="Raccontami brevemente di cosa hai bisogno..."
                                                         className="min-h-[120px] rounded-xl bg-gray-50 border-gray-200 focus:bg-white resize-none transition-all p-4 text-base"
                                                         {...field}
                                                         value={field.value || ""}

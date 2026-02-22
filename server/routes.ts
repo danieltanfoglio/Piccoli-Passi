@@ -100,7 +100,7 @@ async function seedDatabase() {
     await storage.createPricingPlan({
       name: "Premium",
       price: "25€ / ora",
-      description: "Il nostro piano più richiesto per supporto continuativo.",
+      description: "Il mio piano più richiesto per supporto continuativo.",
       features: ["Assistenza completa", "Aiuto compiti", "Attività creative", "Supporto prioritario"],
       isPopular: true
     });

@@ -6,7 +6,7 @@ export const staticPricing: PricingPlan[] = [
     id: 2,
     name: "Premium",
     price: "10€",
-    description: "Il nostro piano più richiesto per supporto continuativo.",
+    description: "Il mio piano più richiesto per supporto continuativo.",
     features: ["Assistenza completa", "Aiuto compiti", "Attività creative", "Supporto prioritario"],
     isPopular: true
   }

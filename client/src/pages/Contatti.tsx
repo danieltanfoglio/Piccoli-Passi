@@ -75,7 +75,7 @@ export default function Contatti() {
                 Parliamo del tuo futuro
               </h1>
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                Hai domande sui nostri percorsi? Vuoi prenotare una consulenza gratuita?
+                Hai domande sui miei percorsi? Vuoi prenotare un'appuntamento gratuito?
                 Compila il form o contattaci direttamente.
               </p>
 
