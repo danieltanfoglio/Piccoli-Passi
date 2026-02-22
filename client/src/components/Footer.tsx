@@ -29,9 +29,9 @@ export function Footer() {
               {[
                 { label: "Home", href: "/" },
                 { label: "Chi Sono", href: "/chi-sono" },
-                { label: "I Nostri Servizi", href: "/servizi" },
+                { label: "I Miei Servizi", href: "/servizi" },
                 { label: "Piani e Prezzi", href: "/prezzi" },
-                { label: "Contattaci", href: "/contatti" },
+                { label: "Contattami", href: "/contatti" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link

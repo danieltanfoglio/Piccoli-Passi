@@ -11,16 +11,16 @@ export default function Servizi() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <Navbar />
-      
+
       <main className="flex-1 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              I Nostri Servizi
+              I Miei Servizi
             </h1>
             <p className="text-xl text-gray-600">
-              Esplora la nostra offerta formativa completa. Dal supporto quotidiano
-              alla preparazione di esami complessi.
+              Esplora la mia offerta formativa completa. Dal supporto quotidiano
+              alla preparazione in vista di test e verifiche.
             </p>
           </div>
 

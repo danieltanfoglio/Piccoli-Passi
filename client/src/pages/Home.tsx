@@ -110,13 +110,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-primary font-bold tracking-wide uppercase text-sm mb-3">
-              Cosa Offriamo
+              Cosa Offro
             </h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              I Nostri Servizi
+              I Miei Servizi
             </h3>
             <p className="text-gray-600 text-lg">
-              Supporto professionale per la crescita dei più piccoli, con servizi di babysitting e tutoraggio.
+              Supporto professionale per la crescita dei più piccoli, con servizi di babysitting e giochi creativi.
             </p>
           </div>
 
@@ -162,12 +162,12 @@ export default function Home() {
                   {
                     step: "02",
                     title: "Conosci",
-                    desc: "Incontra il tutor o la babysitter per un colloquio conoscitivo."
+                    desc: "Incontra la babysitter per un colloquio conoscitivo."
                   },
                   {
                     step: "03",
                     title: "Prenota",
-                    desc: "Prenota il servizio in totale sicurezza attraverso la nostra piattaforma."
+                    desc: "Prenota il servizio in totale sicurezza attraverso questa piattaforma."
                   }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-6 group">

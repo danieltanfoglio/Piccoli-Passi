@@ -3,17 +3,9 @@ import type { PricingPlan } from "@shared/schema";
 
 export const staticPricing: PricingPlan[] = [
   {
-    id: 1,
-    name: "Base",
-    price: "15€ / ora",
-    description: "Ideale per necessità occasionali.",
-    features: ["Assistenza base", "Flessibilità oraria", "Supporto telefonico"],
-    isPopular: false
-  },
-  {
     id: 2,
     name: "Premium",
-    price: "25€ / ora",
+    price: "10€",
     description: "Il nostro piano più richiesto per supporto continuativo.",
     features: ["Tutor dedicati", "Piano di studio personalizzato", "Attività creative incluse", "Supporto prioritario"],
     isPopular: true
