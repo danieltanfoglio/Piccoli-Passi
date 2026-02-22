@@ -9,12 +9,13 @@ export function PricingCard({ plan, index }: { plan: PricingPlan; index: number 
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -5 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className={`relative rounded-3xl p-8 border-2 transition-all duration-300 flex flex-col
+      className={`relative rounded-3xl p-8 border-2 flex flex-col
         ${plan.isPopular
           ? "bg-white border-primary shadow-2xl shadow-primary/10 scale-105 z-10"
-          : "bg-white border-gray-100 shadow-xl hover:border-primary/30"
+          : "bg-white border-gray-100 shadow-xl"
         }
       `}
     >

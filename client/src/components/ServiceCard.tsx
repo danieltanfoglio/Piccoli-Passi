@@ -27,9 +27,10 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
+        whileHover={{ y: -5 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
         viewport={{ once: true }}
-        className="bg-white rounded-2xl p-8 shadow-lg shadow-gray-200/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 group"
+        className="bg-white rounded-2xl p-8 shadow-lg shadow-gray-200/50 border border-gray-100 group cursor-default"
       >
         <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
           <IconRenderer
