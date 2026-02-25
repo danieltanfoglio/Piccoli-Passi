@@ -26,7 +26,7 @@ export function Navbar() {
               <img src="/icona.jpg" alt="Logo" className="w-12 h-12 rounded-full object-cover" />
             </div>
             <span className="text-xl font-bold text-gray-900 tracking-tight">
-              Piccoli<span className="text-primary">Passi</span> Con Ambra Sofia
+              Piccoli<span className="text-primary">Passi</span> Con <span className="text-primary">Ambra Sofia</span>
             </span>
           </Link>
 
@@ -62,9 +62,9 @@ export function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 flex items-center justify-center h-14 w-14 rounded-md hover:bg-gray-100 transition-colors"
+              className="text-gray-600 flex items-center justify-center h-11 w-11"
             >
-              {isOpen ? <X className="h-10 w-10" /> : <Menu className="h-10 w-10" />}
+              {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
             </button>
           </div>
         </div>
