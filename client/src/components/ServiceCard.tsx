@@ -30,7 +30,8 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
         whileHover={{ y: -5 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
         viewport={{ once: true }}
-        className="bg-white rounded-2xl p-8 shadow-lg shadow-gray-200/50 border border-gray-100 group cursor-default"
+        className="bg-white rounded-2xl p-8 shadow-lg shadow-gray-200/50 border border-gray-100 group cursor-pointer"
+        onClick={() => setShowDetail(true)}
       >
         <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
           <IconRenderer
@@ -47,10 +48,7 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
           {service.description}
         </p>
 
-        <div
-          onClick={() => setShowDetail(true)}
-          className="flex items-center text-primary font-semibold text-sm cursor-pointer group/link"
-        >
+        <div className="flex items-center text-primary font-semibold text-sm group/link">
           Scopri di più
           <LucideIcons.ArrowRight className="w-4 h-4 ml-2 transform group-hover/link:translate-x-1 transition-transform" />
         </div>
