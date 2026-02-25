@@ -60,13 +60,12 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <Button
-              variant="ghost"
+            <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 h-14 w-14 p-2"
+              className="text-gray-600 flex items-center justify-center h-14 w-14 rounded-md hover:bg-gray-100 transition-colors"
             >
               {isOpen ? <X className="h-10 w-10" /> : <Menu className="h-10 w-10" />}
-            </Button>
+            </button>
           </div>
         </div>
       </div>
