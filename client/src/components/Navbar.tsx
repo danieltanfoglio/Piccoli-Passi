@@ -63,9 +63,9 @@ export function Navbar() {
             <Button
               variant="ghost"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 h-12 w-12 p-2"
+              className="text-gray-600 h-14 w-14 p-2"
             >
-              {isOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
+              {isOpen ? <X className="h-10 w-10" /> : <Menu className="h-10 w-10" />}
             </Button>
           </div>
         </div>
