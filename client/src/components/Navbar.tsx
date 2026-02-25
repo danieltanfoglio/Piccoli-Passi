@@ -26,7 +26,7 @@ export function Navbar() {
               <img src="/icona.jpg" alt="Logo" className="w-12 h-12 rounded-full object-cover" />
             </div>
             <span className="text-xl font-bold text-gray-900 tracking-tight">
-              Piccoli<span className="text-primary">Passi</span> Con <span className="text-primary">Ambra Sofia</span>
+              Piccoli<span className="text-primary">Passi</span> con <span className="text-primary">Ambra</span>
             </span>
           </Link>
 
