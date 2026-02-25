@@ -76,7 +76,7 @@ export default function Contatti() {
               </h1>
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
                 Hai domande sui miei percorsi? Vuoi prenotare un'appuntamento gratuito?
-                Compila il form o contattaci direttamente.
+                Compila il form o contattami direttamente.
               </p>
 
               <div className="space-y-8">

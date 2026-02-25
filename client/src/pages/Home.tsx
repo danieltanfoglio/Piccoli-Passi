@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 import { Link } from "wouter";
-import { ArrowRight, Star, Users, CheckCircle, GraduationCap } from "lucide-react";
+import { Star, Users, CheckCircle } from "lucide-react";
 import { useServices } from "@/hooks/use-services";
 import { ServiceCard } from "@/components/ServiceCard";
 // @ts-ignore
@@ -38,7 +38,7 @@ export default function Home() {
                 </span> per i tuoi figli
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                Trova la babysitter perfetta per le esigenze dei tuoi bambini.
+                Sono la babysitter perfetta per le esigenze dei tuoi bambini.
                 Assistenza qualificata, aiuto compiti e attività creative.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -143,71 +143,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-                Come Funziona?
-              </h2>
-              <div className="space-y-8">
-                {[
-                  {
-                    step: "01",
-                    title: "Cerca",
-                    desc: "Trova il profilo ideale per le tue esigenze e quelle dei tuoi figli."
-                  },
-                  {
-                    step: "02",
-                    title: "Conosci",
-                    desc: "Incontra la babysitter per un colloquio conoscitivo."
-                  },
-                  {
-                    step: "03",
-                    title: "Prenota",
-                    desc: "Prenota il servizio in totale sicurezza attraverso questa piattaforma."
-                  }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-6 group">
-                    <div className="text-5xl font-bold text-gray-100 group-hover:text-primary/20 transition-colors">
-                      {item.step}
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h4>
-                      <p className="text-gray-600">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-accent/10 rounded-3xl transform rotate-3" />
-              <div className="relative bg-gray-100 rounded-3xl p-8 aspect-square flex items-center justify-center">
-                {/* Abstract visualization instead of image */}
-                <div className="grid grid-cols-2 gap-4 w-full h-full">
-                  <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between">
-                    <GraduationCap className="w-10 h-10 text-primary" />
-                    <div className="h-2 w-16 bg-gray-200 rounded" />
-                  </div>
-                  <div className="bg-primary rounded-2xl shadow-lg p-6 text-white flex flex-col justify-between mt-8">
-                    <Users className="w-10 h-10" />
-                    <div className="h-2 w-16 bg-white/30 rounded" />
-                  </div>
-                  <div className="bg-accent rounded-2xl shadow-lg p-6 text-accent-foreground flex flex-col justify-between -mt-8">
-                    <CheckCircle className="w-10 h-10" />
-                    <div className="h-2 w-16 bg-black/10 rounded" />
-                  </div>
-                  <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between">
-                    <Star className="w-10 h-10 text-yellow-400 fill-current" />
-                    <div className="h-2 w-16 bg-gray-200 rounded" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
     </div>
   );
