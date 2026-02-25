@@ -86,7 +86,7 @@ export default function Contatti() {
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 text-lg">Vienimi a trovare</h3>
-                    <p className="text-gray-600">Via Giovanni Paolo II, 25016 Brescia</p>
+                    <p className="text-gray-600">Ghedi 25016, Brescia</p>
                   </div>
                 </div>
 
